@@ -37,8 +37,6 @@ document.querySelector('#close-login-form').onclick = () => {
 //image float code
 
 
-
-
 var swiper = new Swiper(".vehicles-slider", {
     slidesPerView: 1,
     spaceBetween: 20,
