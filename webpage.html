@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <script src="main.js"></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.chatbot-icon {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chatbox {
+    display: none;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    overflow: hidden;
+}
+
+.chatbox-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbox-body {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+}
+
+.chatbox-message {
+    margin-bottom: 10px;
+}
+
+.chatbox-message p {
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chatbox-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.chatbox-footer input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chatbox-footer button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chatbot-icon" onclick="toggleChat()">
+            💬
+        </div>
+        <div class="chatbox" id="chatbox">
+            <div class="chatbox-header">
+                <h4>Chat with us</h4>
+                <button onclick="toggleChat()">✖️</button>
+            </div>
+            <div class="chatbox-body" id="chatbox-body">
+                <div class="chatbox-message">
+                    <p>Hi! How can I assist you today?</p>
+                </div>
+            </div>
+            <div class="chatbox-footer">
+                <input type="text" id="user-input" placeholder="Type your message here..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
