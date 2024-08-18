@@ -1,753 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sadhannu</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <!--font awesome cdn link-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!--css style link-->
-    <link rel="stylesheet" href="css/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Saadhanu </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
-    <!--Header section-->
-    <header class="header">
-        <div id="menu-btn" class="fas fa-bars"></div>
-        <a href="#" class="logo"><img src="image/logo.png"></a>
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#cars">Cars</a>
-            <a href="#bikes">Bikes</a>
-            <a href="#services">Services</a>
-            <a href="#review">Review</a>
-            <a href="#contact">Contact</a>
-        </nav>
+  <!--Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
 
-        <div id="login-btn">
-            <button class="btn">login</button>
-            <i class="far fa-user"></i>
-        </div>
-    </header>
+    <div class="container">
+      <img src="assets/images/saadhanu-logo.png" alt="logo" />
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cars.html"> Cars </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="twowheeler.html"> Two-Wheelers </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"> Contact Us </a>
+          </li>
+          <li class="nav-item">
+            <a href="cart.html"> <i class="fas fa-shopping-cart"> </i> </a>
+            <a href="account.html"> <i class="fas fa-user"> </i> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
-    <!--- Log in form -->
-    <div class="login-form-container">
-
-        <span class="fas fa-times" id="close-login-form"></span>
-        <form action="">
-            <h3>User Login</h3>
-            <input type="email" placeholder="Email" class="box">
-            <input type="password" placeholder="Password" class="box">
-            <p>Forget Password <a href="#">Reset</a></p>
-            <input type="submit" value="login now" class="btn">
-            <p>or login With</p>
-            <div class="buttons">
-                <a href="#" class="btn">Google</a>
-                <a href="#" class="btn">Facebook</a>
-            </div>
-            <p>Don't have an account <a href="#">Create one</a></p>
-        </form>
+  <!--Home-->
+  <section id="home">
+    <div class="container">
+      <h5> Recently Added Vehicles </h5>
+      <h1> <span> Offer </span> Prices </h1>
+      <p> Saadhanu Simplifies <br> Buying and Selling of <br> Vehicles </p>
+      <button class="BuyNow"> Buy Now! </button>
     </div>
 
-    <!-- home Section  -->
-    <section class="home" id="home">
-        <h1 class="home-parallax" data-speed="-2">Find your car</h1>
-        <img class="home-parallax" data-speed="5" src="image/themecar.jpg" alt="">
-        <a href="#" class="btn home-parallax" data-speed="7">Explore cars</a>
+  </section>
 
-    </section>
-    <!-- home section -->
-    <!--   icnos sections-->
-    <section class="icons-container">
-        <div class="icon">
-            <i class="fas fa-car"></i>
-            <div class="content">
-                <h3>1500+</h3>
-                <p>Cars sold</p>
-            </div>
-        </div>
+  <!--Brand-->
+  <section id="brand" class="container">
+    <div class="row">
+      <h3 class="heading text-center">Range of Different Brands </h3>
+      <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="/assets/images/b2.png" alt="">
+      <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="/assets/images/b3.png" alt="">
+      <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="/assets/images/b5.png" alt="">
+      <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="/assets/images/b6.png" alt="">
 
-        <div class="icon">
-            <i class="fas fa-users"></i>
-            <div class="content">
-                <h3>500+</h3>
-                <p>Happy Customers</p>
-            </div>
-        </div>
-
-        <div class="icon">
-            <i class="fas fa-car"></i>
-            <div class="content">
-                <h3>150+</h3>
-                <p>New Cars</p>
-            </div>
-        </div>
-
-        <div class="icon">
-            <i class="fas fa-motorcycle"></i>
-            <div class="content">
-                <h3>15000+</h3>
-                <p>Sold bike</p>
-            </div>
-        </div>
-
-        <div class="icon">
-            <i class="fas fa-motorcycle"></i>
-            <div class="content">
-                <h3>50+</h3>
-                <p>New bike</p>
-            </div>
-        </div>
-    </section>
-    <!--Icons sections-->
-
-    <!--Vechile Section-->
-    <section class="vehicles" id="cars" >
-        <h1 class="heading">Popular <span>cars</span></h1>
-        <div class="swiper vehicles-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <img src="image/car.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-                <!--car 2-->
-                <div class="swiper-slide box">
-                    <img src="image/car1.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-                <!--car3-->
-
-                <div class="swiper-slide box">
-                    <img src="image/car2.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-                <!--car4-->
-
-                <div class="swiper-slide box">
-                    <img src="image/car3.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-
-                <!--car 5-->
-                <div class="swiper-slide box">
-                    <img src="image/car4.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-                <!--car 6-->
-                <div class="swiper-slide box">
-                    <img src="image/car5.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
-    <!--Bike Section -->
-    <!--bike1 bmw-->
-    <section class="vehicles" id="bikes">
-        <h1 class="heading">Popular <span>Bikes</span></h1>
-        <div class="swiper vehicles-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <img src="image/bike1.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            G 310 R
-                            <span class="fas fa-circle"></span>BS6
-                            <span class="fas fa-circle"></span>9500rpm
-                            <span class="fas fa-circle"></span>7500rpm torque
-                            <span class="fas fa-circle"></span>143kmph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-                <!--bike 2-->
-                <div class="swiper-slide box">
-                    <img src="image/bike2.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-
-                            Royal Enfield
-                            <span class="fas fa-circle"></span>BS6
-                            <span class="fas fa-circle"></span>6100rpm
-                            <span class="fas fa-circle"></span>400rpm torque
-                            <span class="fas fa-circle"></span>97.92kmph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-                <!--bike3-->
-
-                <div class="swiper-slide box">
-                    <img src="image/bike3.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-                <!--bike4-->
-                <div class="swiper-slide box">
-                    <img src="image/bike4.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-
-                <!--bike5-->
-                <div class="swiper-slide box">
-                    <img src="image/bike5.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-
-                <!--bike6-->
-
-                <div class="swiper-slide box">
-                    <img src="image/bike6.jpg" alt="">
-                    <div class="content">
-                        <h3>New model</h3>
-                        <div class="price"><span>price: Rs 6500000/-</span></div>
-                        <p>
-                            new
-                            <span class="fas fa-circle"></span>2023
-                            <span class="fas fa-circle"></span>automatic
-                            <span class="fas fa-circle"></span>petrol
-                            <span class="fas fa-circle"></span>180mph
-                        </p>
-                        <a href="#" class="btn">Check out</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-    <!--vehicle section ends-->
-
-
-
-
-    402+
-    <!--Services section-->
-    <section class="services" id="services">
-        <h1 class="heading">Our <span>Services</span></h1>
-        <div class="box-container">
-            <div class="box">
-                <i class="fas fa-car"></i>
-                <h3>Car selling</h3>
-                <p>Lorem ipsum dolor sit</p>
-                <a href="#" class="btn">Read more</a>
-            </div>
-            <div class="box">
-                <i class="fas fa-tools"></i>
-                <h3>Parts selling</h3>
-                <p>Lorem ipsum dolor sit</p>
-                <a href="#" class="btn">Read more</a>
-            </div>
-            <div class="box">
-                <i class="fas fa-tools"></i>
-                <h3>Parts Repair</h3>
-                <p>Lorem ipsum dolor sit</p>
-                <a href="#" class="btn">Read more</a>
-            </div>
-            <div class="box">
-                <i class="fas fa-motorcycle"></i>
-                <h3>2-wheelers selling</h3>
-                <p>Lorem ipsum dolor sit</p>
-                <a href="#" class="btn">Read more</a>
-            </div>
-            <div class="box">
-                <i class="fas fa-battery"></i>
-                <h3>Battery replacement</h3>
-                <p>Lorem ipsum dolor sit</p>
-                <a href="#" class="btn">Read more</a>
-            </div>
-            <div class="box">
-                <i class="fas fa-gas-pump"></i>
-                <h3>Oil Change</h3>
-                <p>Lorem ipsum dolor sit</p>
-                <a href="#" class="btn">Read more</a>
-            </div>
-            <div class="box">
-                <i class="fas fa-headset"></i>
-                <h3>24/7</h3>
-                <p>Lorem ipsum dolor sit</p>
-                <a href="#" class="btn">Read more</a>
-            </div>
-        </div>
-    </section>
-    <!--service setion ends-->
-
-
-
-
-
-    <!--feature section starts-->
-
-    <!-- car-feature-section -->
-    <section class="featured" id="featured">
-        <h1 class="heading"><span>Featured </span>Cars</h1>
-        <div class="swiper featured-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <img src="image/car.jpg">
-                    <h3>New model</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="price">
-                        Rs 55,00,000/-
-                    </div>
-                    <a href="#" class="btn">check out</a>
-                </div>
-
-
-                <div class="swiper-slide box">
-                    <img src="image/car1.jpg">
-                    <h3>New model</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="price">
-                        Rs 55,00,000/-
-                    </div>
-                    <a href="#" class="btn">check out</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="image/car3.jpg">
-                    <h3>New model</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <div class="price">
-                        Rs 55,00,000/-
-                    </div>
-                    <a href="#" class="btn">check out</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="image/car4.jpg">
-                    <h3>New model</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <div class="price">
-                        Rs 55,00,000/-
-                    </div>
-                    <a href="#" class="btn">check out</a>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
-
-
-    <!-- bike-feature-section -->
-    <section class="featured" id="featured">
-        <h1 class="heading"><span>Featured </span>Bikes</h1>
-        <div class="swiper featured-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <img src="image/bike4.jpg">
-                    <h3>New model</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="price">
-                        Rs 55,00,000/-
-                    </div>
-                    <a href="#" class="btn">check out</a>
-                </div>
-
-
-                <div class="swiper-slide box">
-                    <img src="image/bike3.jpg">
-                    <h3>New model</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="price">
-                        Rs 55,00,000/-
-                    </div>
-                    <a href="#" class="btn">check out</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="image/bike2.jpg">
-                    <h3>New model</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <div class="price">
-                        Rs 55,00,000/-
-                    </div>
-                    <a href="#" class="btn">check out</a>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="image/bike1.jpg">
-                    <h3>New model</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <div class="price">
-                        Rs 55,00,000/-
-                    </div>
-                    <a href="#" class="btn">check out</a>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-    <!-- feature sections ends -->
-    <!-- newsletter section starts -->
-
-    <section class="newsletter">
-        <h3>Subscribe for latest update</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi</p>
-        <form action="">
-            <input type="email" placeholder="Enter your email" name="" id="">
-            <input type="submit" class="subscribe" value="Submit">
-        </form>
-    </section>
-    <!-- newsletter section ends -->
-
-    <!-- review section -->
-    <section class="review" id="review">
-        <h1 class="heading">Client's <span>review</span></h1>
-        <div class="swiper review-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <img src="image/pic1.jpg">
-                    <div class="content">
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                            .Sunt vitae impedit perferendis! Cum unde laboriosam
-                            qui maxime pariatur? Earum aperiam natus ex?
-                            Incidunt debitis laboriosam vitae mollitia unde, iure doloribus!
-                        </p>
-                        <h3>John Deo</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="image/pic2.jpg">
-                    <div class="content">
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                            .Sunt vitae impedit perferendis! Cum unde laboriosam
-                            qui maxime pariatur? Earum aperiam natus ex?
-                            Incidunt debitis laboriosam vitae mollitia unde, iure doloribus!
-                        </p>
-                        <h3>John Deo</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="image/pic3.jpg">
-                    <div class="content">
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                            .Sunt vitae impedit perferendis! Cum unde laboriosam
-                            qui maxime pariatur? Earum aperiam natus ex?
-                            Incidunt debitis laboriosam vitae mollitia unde, iure doloribus!
-                        </p>
-                        <h3>John Deo</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <img src="image/pic4.jpg">
-                    <div class="content">
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                            .Sunt vitae impedit perferendis! Cum unde laboriosam
-                            qui maxime pariatur? Earum aperiam natus ex?
-                            Incidunt debitis laboriosam vitae mollitia unde, iure doloribus!
-                        </p>
-                        <h3>John Deo</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <img src="image/pic5.jpg">
-                    <div class="content">
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                            .Sunt vitae impedit perferendis! Cum unde laboriosam
-                            qui maxime pariatur? Earum aperiam natus ex?
-                            Incidunt debitis laboriosam vitae mollitia unde, iure doloribus!
-                        </p>
-                        <h3>John Deo</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <img src="image/pic6.jpg">
-                    <div class="content">
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                            .Sunt vitae impedit perferendis! Cum unde laboriosam
-                            qui maxime pariatur? Earum aperiam natus ex?
-                            Incidunt debitis laboriosam vitae mollitia unde, iure doloribus!
-                        </p>
-                        <h3>John Deo</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-    <!-- review section -->
-
-<!-- contact section -->
-<section class="contact" id="contact">
-    <h1 class="heading"><span>Contatc </span> us</h1>
-
-<div class="row">
-    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.3346569817436!2d85.34846150000001!3d27.737822099999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198be9be4f77%3A0x6f93699acab397db!2sMANDIKHATAR!5e0!3m2!1sen!2snp!4v1688300516570!5m2!1sen!2snp"
-    width="600" height="450" style="border:0;" 
-    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <form action="">
-        <h3>Get in touch</h3>
-        <input type="text" placeholder="name" class="box">
-        <input type="email" name="email" placeholder="email" class="box">
-        <input type="number"placeholder="number" name="number" class="box">
-        <textarea name="message" placeholder="message" class="box" cols="30" rows="10"></textarea>
-        <input type="submit" value="Send message" class="btn">
-    </form>
-</div>
-
-</section>
-<!-- contact section -->
-
-<!-- footer section -->
-<section class="footer">
-    <div class="box-container">
-        <div class="box">
-            <h3>Our branches</h3>
-            <a href="#"><i class="fas fa-map-marker-alt"></i>Pokhara</a>
-            <a href="#"><i class="fas fa-map-marker-alt"></i>Kathmandu</a>
-            <a href="#"><i class="fas fa-map-marker-alt"></i>Butwal</a>
-            <a href="#"><i class="fas fa-map-marker-alt"></i>Biratnagar</a>
-            <a href="#"><i class="fas fa-map-marker-alt"></i>Nepalgunj</a>
-        </div>
-
-        <div class="box">
-            <h3>Quick Links</h3>
-            <a href="#"><i class="fas fa-arrow-right"></i>Home</a>
-            <a href="#"><i class="fas fa-arrow-right"></i>Vehicles</a>
-            <a href="#"><i class="fas fa-arrow-right"></i>services</a>
-            <a href="#"><i class="fas fa-arrow-right"></i>featured</a>
-            <a href="#"><i class="fas fa-arrow-right"></i>contact</a>
-            
-        </div>
-        
-
-        <div class="box">
-            <h3>Quick Links</h3>
-            <a href="#"><i class="fas fa-arrow-phone"></i>+01-4371868</a>
-            <a href="#"><i class="fas fa-arrow-phone"></i>+977-9840174635</a>
-            <a href="#"><i class="fas fa-arrow-envelope"></i>swastikkarki@gmail.com</a>
-            <a href="#"><i class="fas fa-map-marker-alt"></i>kathmandu, Nepal</a>
-        </div>
-
-        <div class="box">
-            <h3>Quick Links</h3>
-            <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
-            <a href="#"><i class="fab fa-twitter"></i> twitter</a>
-            <a href="#"><i class="fab fa-instagram"></i> instagram</a>
-            <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
-        </div>
+      <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="/assets/images/b7.png" alt="">
+      <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="/assets/images/b8.png" alt="">
+      <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="/assets/images/b9.png" alt="">
+      <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="/assets/images/cbrand4.png" alt="">
     </div>
-    <div class="credit">
-        Created by S & P | All right reserved! 2023
+
+  </section>
+
+  <!-- new -->
+  <!-- <section id="new" class="w=100">
+        <div class="row p-0 m-0"> 
+            <!-One -->
+  <!--
+           <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+                <img class="img-fluid" src="assets/images/1.png" alt="">
+                <div class="details">
+                  <h2> Newly Listed Two-Wheelers </h2>
+                  <button class="BuyNow"> Check </button>
+             </div>
+            </div>
+          -->
+  <!--Two-->
+  <!--
+            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+                <img class="img-fluid" src="assets/images/2.png" alt="">
+                <div class="details">
+                  <h2> Newly Listed Cars </h2>
+                  <button class="BuyNow"> Check </button>
+             </div>
+            </div>
+          -->
+  <!--Three -->
+  <!--
+            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+                <img class="img-fluid" src="assets/images/3.png" alt="">
+                <div class="details">
+                  <h2> Special Offers </h2>
+                  <button class="BuyNow"> Check </button>
+             </div>
+            </div> 
+
+              </div>
+      </section> -->
+
+  <!--featured products -->
+  <section id="featured" class="my-5 pb-5">
+    <div class="container text-center mt-5 py-5">
+      <h3> Great Deals </h3>
+      <p id="design-element"></p>
+      <p> Get Newer Models in Great Prices </p>
+      <h4> Two-Wheelers </h4>
     </div>
-</section>
+
+
+    <div class="row mx-auto container-fluid">
+
+      <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="/assets/images/tvs raid.png" />
+        <h5 class="p-name"> TVS Raider 125 </h5>
+        <h4 class="p-price"> Rs. 175,000 </h4>
+        <button class="BuyNow"> Check Now! </button>
+      </div>
+
+      <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="/assets/images/ray125.png" />
+        <h5 class="p-name"> Yamaha Ray ZR125 FI </h5>
+        <h4 class="p-price"> Rs. 155,000 </h4>
+        <button class="BuyNow"> Check Now! </button>
+      </div>
+
+      <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="/assets/images/diio.png" />
+        <h5 class="p-name"> Honda Dio DLX </h5>
+        <h4 class="p-price"> Rs. 105,000 </h4>
+        <button class="BuyNow"> Check Now! </button>
+      </div>
+
+      <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="/assets/images/xpulse.png" />
+        <h5 class="p-name"> Hero Xpulse 200 4V </h5>
+        <h4 class="p-price"> Rs. 340,000 </h4>
+        <button class="BuyNow"> Check Now! </button>
+      </div>
+
+      <h4 style="text-align: center;padding-top: 10px;"> Cars </h4>
+
+      <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="/assets/images/kiaseltos.png" />
+        <h5 class="p-name"> Kia Seltos HTK </h5>
+        <h4 class="p-price"> Rs. 38,00,000 </h4>
+        <button class="BuyNow"> Check Now! </button>
+      </div>
+
+      <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="/assets/images/i20.png" />
+        <h5 class="p-name"> Hyundai i20 </h5>
+        <h4 class="p-price"> Rs. 25,00,000 </h4>
+        <button class="BuyNow"> Check Now! </button>
+      </div>
+
+      <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="/assets/images/nexon.png" />
+        <h5 class="p-name"> Tata Nexon EV </h5>
+        <h4 class="p-price"> Rs. 28,50,000 </h4>
+        <button class="BuyNow"> Check Now! </button>
+      </div>
+
+      <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="/assets/images/suzuki swift.png" />
+        <h5 class="p-name"> Maruti Suzuki Swift </h5>
+        <h4 class="p-price"> Rs. 18,40,000 </h4>
+        <button class="BuyNow"> Check Now! </button>
+      </div>
+    </div>
+  </section>
 
 
 
-<!-- footer section -->
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <!--JS link-->
-    <script src="js/script.js"></script>
+          <h6>About</h6>
+          <p class="text-justify">Saadhanu is a web-based platform where you can safely buy and sell new or used cars,
+            bikes,
+            and scooters.Enjoy special discounts, compare vehicles, connect with experts, and get dedicated customer
+            care. <br> Simplifying vehicle trading for you.</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li><a href="twowheeler.html">Two-Wheelers</a></li>
+            <li><a href="cars.html">Cars</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Call Experts </a></li>
+
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by P & S
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
