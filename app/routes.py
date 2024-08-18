@@ -5,30 +5,6 @@ from pymongo import MongoClient
 
 bp = Blueprint('main', __name__)
 
-@bp.route('/api/answers', methods=['POST'])
-def get_answers():
-    question = request.json.get('question')
-    documents = request.json.get('documents')
-    examples = request.json.get('examples')
-
-    if not question or not documents:
-        return jsonify({"error": "Invalid input"}), 400
-
-    payload = {
-        "question": question,
-        "documents": documents,
-        "examples": examples
-    }
-
-    try:
-        response = call_external_api(
-            url=f"{current_app.config['API_BASE_URL']}/answers",
-            payload=payload
-        )
-        return jsonify({"response": response})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
 @bp.route('/api/moderations', methods=['POST'])
 def check_moderation():
     input_text = request.json.get('input')
@@ -37,7 +13,7 @@ def check_moderation():
         return jsonify({"error": "Invalid input"}), 400
 
     payload = {
-    "input": "Are you a fucking nigga?",
+    "input": input_text,
     "model": "text-moderation-latest"
 }
 
@@ -50,51 +26,6 @@ def check_moderation():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@bp.route('/api/classifications', methods=['POST'])
-def classify_text():
-    query = request.json.get('query')
-    examples = request.json.get('examples')
-
-    if not query or not examples:
-        return jsonify({"error": "Invalid input"}), 400
-
-    payload = {
-        "query": query,
-        "examples": examples
-    }
-
-    try:
-        response = call_external_api(
-            url=f"{current_app.config['API_BASE_URL']}/classifications",
-            payload=payload
-        )
-        return jsonify({"response": response})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-@bp.route('/api/completions', methods=['POST'])
-def create_completion():
-    prompt = request.json.get('prompt')
-    model = request.json.get('model', 'gpt-4')
-    max_tokens = request.json.get('max_tokens', 100)
-
-    if not prompt:
-        return jsonify({"error": "Invalid input"}), 400
-
-    payload = {
-        "model": model,
-        "prompt": prompt,
-        "max_tokens": max_tokens
-    }
-
-    try:
-        response = call_external_api(
-            url=f"{current_app.config['API_BASE_URL']}/completions",
-            payload=payload
-        )
-        return jsonify({"response": response})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
 
 @bp.route('/api/chat/completions', methods=['POST'])
 def chat():
