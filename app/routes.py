@@ -14,14 +14,16 @@ def get_answers():
     if not question or not documents:
         return jsonify({"error": "Invalid input"}), 400
 
+    payload = {
+        "question": question,
+        "documents": documents,
+        "examples": examples
+    }
+
     try:
         response = call_external_api(
             url=f"{current_app.config['API_BASE_URL']}/answers",
-            payload={
-                "question": question,
-                "documents": documents,
-                "examples": examples
-            }
+            payload=payload
         )
         return jsonify({"response": response})
     except Exception as e:
@@ -34,10 +36,15 @@ def check_moderation():
     if not input_text:
         return jsonify({"error": "Invalid input"}), 400
 
+    payload = {
+    "input": "Are you a fucking nigga?",
+    "model": "text-moderation-latest"
+}
+
     try:
         response = call_external_api(
             url=f"{current_app.config['API_BASE_URL']}/moderations",
-            payload={"input": input_text}
+            payload=payload
         )
         return jsonify({"response": response})
     except Exception as e:
@@ -51,13 +58,15 @@ def classify_text():
     if not query or not examples:
         return jsonify({"error": "Invalid input"}), 400
 
+    payload = {
+        "query": query,
+        "examples": examples
+    }
+
     try:
         response = call_external_api(
             url=f"{current_app.config['API_BASE_URL']}/classifications",
-            payload={
-                "query": query,
-                "examples": examples
-            }
+            payload=payload
         )
         return jsonify({"response": response})
     except Exception as e:
@@ -72,14 +81,16 @@ def create_completion():
     if not prompt:
         return jsonify({"error": "Invalid input"}), 400
 
+    payload = {
+        "model": model,
+        "prompt": prompt,
+        "max_tokens": max_tokens
+    }
+
     try:
         response = call_external_api(
             url=f"{current_app.config['API_BASE_URL']}/completions",
-            payload={
-                "model": model,
-                "prompt": prompt,
-                "max_tokens": max_tokens
-            }
+            payload=payload
         )
         return jsonify({"response": response})
     except Exception as e:
@@ -92,14 +103,29 @@ def chat():
     if not user_input:
         return jsonify({"error": "Invalid input"}), 400
 
+    payload = {
+    "model": "gpt-3.5-turbo-0301",
+    "messages": [{
+        "role": "system",
+        "content": user_input,
+        "name": "string"
+    }],
+    "temperature": 1,
+    "top_p": 1,
+    "n": 1,
+    "stream": false,
+    "stop": null,
+    "max_tokens": "inf",
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "logit_bias": null,
+    "user": "user-1234"
+}
+
     try:
         response = call_external_api(
             url=f"{current_app.config['API_BASE_URL']}/chat/completions",
-            payload={
-                "model": "gpt-4",
-                "prompt": user_input,
-                "max_tokens": 100
-            }
+            payload=payload
         )
         return jsonify({"response": response})
     except Exception as e:
@@ -108,8 +134,8 @@ def chat():
 # Utility function to call external API
 def call_external_api(url, payload):
     headers = {
-        'Authorization': f"Bearer {current_app.config['API_KEY']}",
         'Content-Type': 'application/json',
+        'X-TL-Key': '829218ab50a74714826ed54fad5c9e29'
     }
     response = requests.post(url, json=payload, headers=headers)
 
@@ -158,6 +184,3 @@ def get_data():
 
     else:
         return jsonify({"error": "Unsupported database type"}), 400
-
-if __name__ == '__main__':
-    app.run(debug=True)
