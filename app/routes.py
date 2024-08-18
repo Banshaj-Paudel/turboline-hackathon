@@ -104,22 +104,12 @@ def chat():
         return jsonify({"error": "Invalid input"}), 400
 
     payload = {
-    "model": "gpt-3.5-turbo-0301",
+    "model": "gpt-3.5-turbo",
     "messages": [{
         "role": "system",
         "content": user_input,
         "name": "string"
-    }],
-    "temperature": 1,
-    "top_p": 1,
-    "n": 1,
-    "stream": false,
-    "stop": null,
-    "max_tokens": "inf",
-    "presence_penalty": 0,
-    "frequency_penalty": 0,
-    "logit_bias": null,
-    "user": "user-1234"
+    }]
 }
 
     try:
