@@ -2,13 +2,8 @@ import requests
 from flask import Blueprint, request, jsonify, current_app
 import mysql.connector
 from pymongo import MongoClient
-from app import create_app
-
-app = create_app()
 
 bp = Blueprint('main', __name__)
-
-# Example of integrating API endpoints
 
 @bp.route('/api/answers', methods=['POST'])
 def get_answers():
