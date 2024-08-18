@@ -1,64 +1,39 @@
-function toggleChat() {
-    const chatbox = document.getElementById('chatbox');
-    chatbox.style.display = chatbox.style.display === 'none' || chatbox.style.display === '' ? 'flex' : 'none';
-}
-
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-        sendMessage();
-    }
-}
-
 function sendMessage() {
-    const userInput = document.getElementById('user-input');
-    const message = userInput.value.trim();
+    // Get the value from the text box
+    var message = document.getElementById('messageInput').value;
 
-    if (message === '') return;
+    // Create a new XMLHttpRequest object
+    var xhr = new XMLHttpRequest();
 
-    displayMessage(message, 'user');
-    userInput.value = '';
+    // Define the HTTP method and the URL of the API
+    xhr.open('POST', 'http://127.0.0.1:5000/api/chat/answer', true);
 
-    fetch('http://127.0.0.1:5000/api/chat/answer', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json', // Ensure this header is set
-        },
-        body: JSON.stringify({ input: message }), // Convert the message object to JSON string
-        mode: 'no-cors'
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+    // Set the request header to specify that the request body contains JSON
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    // Set up a callback function to handle the response
+    xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            // Successfully received a response
+            var response = JSON.parse(xhr.responseText);
+            var responseMessage = response.response.choices[0].message.content;
+
+            // Display the response in the responseContainer div
+            document.getElementById('responseContainer').innerText = responseMessage;
+        } else {
+            // Handle errors
+            console.error('Request failed. Status:', xhr.status);
         }
-        return response.json();
-    })
-    .then(data => {
-        const botMessage = data.response;
-        displayMessage(botMessage, 'bot');
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-        displayMessage('Something went wrong. Please try again later.', 'bot');
-    });
-}
+    };
 
-function displayMessage(message, sender) {
-    const chatboxBody = document.getElementById('chatbox-body');
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('chatbox-message');
+    // Set up a callback function to handle errors
+    xhr.onerror = function () {
+        console.error('Request failed');
+    };
 
-    const messageText = document.createElement('p');
-    messageText.textContent = message;
+    // Construct the JSON payload
+    var payload = JSON.stringify({ input: message });
 
-    if (sender === 'user') {
-        messageText.style.backgroundColor = '#007bff';
-        messageText.style.color = 'white';
-    } else if (sender === 'bot') {
-        messageText.style.backgroundColor = '#e9ecef';
-        messageText.style.color = 'black';
-    }
-
-    messageElement.appendChild(messageText);
-    chatboxBody.appendChild(messageElement);
-    chatboxBody.scrollTop = chatboxBody.scrollHeight;
+    // Send the request with the JSON payload
+    xhr.send(payload);
 }

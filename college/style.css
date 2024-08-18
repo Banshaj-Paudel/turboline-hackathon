@@ -52,3 +52,51 @@ footer {
     text-align: center;
     padding: 1em 0;
 }
+
+#chatbotContainer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 400px;
+    display: none; /* Initially hidden */
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+#chatbotHeader {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+#messageInput {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+#responseContainer {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    height: 200px;
+    overflow-y: auto;
+}
+#chatbotIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #007bff;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+}

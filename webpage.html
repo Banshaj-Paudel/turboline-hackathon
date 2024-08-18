@@ -4,112 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
-    <script src="main.js"></script>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-}
-
-.chatbot-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
-
-.chatbot-icon {
-    background-color: #007bff;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 24px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.chatbox {
-    display: none;
-    flex-direction: column;
-    width: 300px;
-    height: 400px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: white;
-    overflow: hidden;
-}
-
-.chatbox-header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chatbox-body {
-    flex-grow: 1;
-    padding: 10px;
-    overflow-y: auto;
-    background-color: #f1f1f1;
-}
-
-.chatbox-message {
-    margin-bottom: 10px;
-}
-
-.chatbox-message p {
-    margin: 0;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.chatbox-footer {
-    display: flex;
-    padding: 10px;
-    background-color: #f1f1f1;
-}
-
-.chatbox-footer input {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.chatbox-footer button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
+        /* Basic styling for the chatbot and icon */
+        #chatbotContainer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 400px;
+            display: none; /* Initially hidden */
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        #chatbotHeader {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #messageInput {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+        #responseContainer {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            height: 200px;
+            overflow-y: auto;
+        }
+        #chatbotIcon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #007bff;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
-    <div class="chatbot-container">
-        <div class="chatbot-icon" onclick="toggleChat()">
-            💬
-        </div>
-        <div class="chatbox" id="chatbox">
-            <div class="chatbox-header">
-                <h4>Chat with us</h4>
-                <button onclick="toggleChat()">✖️</button>
-            </div>
-            <div class="chatbox-body" id="chatbox-body">
-                <div class="chatbox-message">
-                    <p>Hi! How can I assist you today?</p>
-                </div>
-            </div>
-            <div class="chatbox-footer">
-                <input type="text" id="user-input" placeholder="Type your message here..." onkeypress="handleKeyPress(event)">
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
+    <!-- Chatbot icon -->
+    <div id="chatbotIcon">💬</div>
+
+    <!-- Chatbot container -->
+    <div id="chatbotContainer">
+        <div id="chatbotHeader">Chatbot</div>
+        <div id="responseContainer"></div>
+        <input type="text" id="messageInput" placeholder="Type your message here">
+        <button onclick="sendMessage()">Send</button>
     </div>
+
+    <script>
+        // Function to toggle the chatbot container
+        function toggleChatbot() {
+            var container = document.getElementById('chatbotContainer');
+            if (container.style.display === 'none' || container.style.display === '') {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
+        // Add click event listener to the chatbot icon
+        document.getElementById('chatbotIcon').addEventListener('click', toggleChatbot);
+
+        function sendMessage() {
+            // Get the value from the text box
+            var message = document.getElementById('messageInput').value;
+
+            // Create a new XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Define the HTTP method and the URL of the API
+            xhr.open('POST', 'http://127.0.0.1:5000/api/chat/answer', true);
+
+            // Set the request header to specify that the request body contains JSON
+            xhr.setRequestHeader('Content-Type', 'application/json');
+
+            // Set up a callback function to handle the response
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // Successfully received a response
+                    var response = JSON.parse(xhr.responseText);
+                    var responseMessage = response.response.choices[0].message.content;
+
+                    // Display the response in the responseContainer div
+                    document.getElementById('responseContainer').innerText = responseMessage;
+                } else {
+                    // Handle errors
+                    console.error('Request failed. Status:', xhr.status);
+                }
+            };
+
+            // Set up a callback function to handle errors
+            xhr.onerror = function () {
+                console.error('Request failed');
+            };
+
+            // Construct the JSON payload
+            var payload = JSON.stringify({ input: message });
+
+            // Send the request with the JSON payload
+            xhr.send(payload);
+        }
+    </script>
 </body>
 </html>
